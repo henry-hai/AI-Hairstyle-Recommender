@@ -1,0 +1,38 @@
+AI Hairstyle Recommender Limited License v1.0
+
+Copyright (c) 2026 Henry Hai
+All rights reserved.
+
+Permission is hereby granted to any person obtaining a copy of this software
+and associated documentation files (the "Software") to use, copy, and modify
+the Software solely for:
+
+1. personal, non-commercial use;
+2. educational use; or
+3. internal evaluation/testing.
+
+The following are NOT permitted without prior written permission from the
+copyright holder:
+
+1. any commercial use, including use by or for a business;
+2. selling, sublicensing, renting, or otherwise monetizing the Software;
+3. offering the Software as a hosted service, API, or SaaS;
+4. mass redistribution, bulk replication, mirroring, or republishing of the
+   Software (in source or binary form);
+5. using the Software or substantial portions of it to train, fine-tune, or
+   improve machine learning models for commercial or production use.
+
+Attribution:
+- Any permitted redistribution of modified source for non-commercial purposes
+  must retain this license text and copyright notice.
+
+No Warranty:
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+For commercial licensing requests, contact the copyright holder.
