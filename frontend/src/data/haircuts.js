@@ -2,9 +2,6 @@
 // reference photo in /public/haircuts. Matching is keyword-based and
 // order-sensitive: the FIRST keyword found in the style name wins, so more
 // specific cuts are listed before generic ones.
-//
-// TO PERSONALIZE LATER: replace the .jpg files in /public/haircuts with photos
-// from your barbering gallery (keep the same filenames) — no code change needed.
 
 const STYLE_IMAGE_RULES = [
   { keyword: 'pompadour', image: 'pompadour' },

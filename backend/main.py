@@ -33,7 +33,7 @@ face_mesh = mp_face_mesh.FaceMesh(static_image_mode=True, max_num_faces=1, refin
 # ---------------------------------------------------------------------------
 # Barber Logic: face shapes -> recommendations (the source of truth).
 # This is grounded in 14 years of professional barbering experience. The LLM
-# never overrides this — it only explains these specific recommendations.
+# never overrides this - it only explains these specific recommendations.
 # ---------------------------------------------------------------------------
 HAIRSTYLE_DATABASE = {
     "Oval": {
@@ -67,7 +67,7 @@ def analyze_face_shape(image):
     """Computer-vision step: extract landmarks and classify the face shape.
 
     Returns (shape, ratios) where ratios are the geometric measurements used
-    for classification — these are surfaced to the user and fed to the LLM as
+    for classification - these are surfaced to the user and fed to the LLM as
     grounding context.
     """
     results = face_mesh.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
@@ -114,7 +114,7 @@ def generate_explanation(shape, recommendation, ratios):
     """LLM step (optional): turn the rule-based result into a personalized,
     plain-English explanation.
 
-    The model is constrained to the recommendations produced above — it acts as
+    The model is constrained to the recommendations produced above - it acts as
     the *voice*, not the expert. If no API key is configured or the call fails,
     we return None and the frontend falls back to the static description.
     """
@@ -133,7 +133,7 @@ def generate_explanation(shape, recommendation, ratios):
             f"The barber recommends these cuts: {styles}.\n\n"
             "Write 2-3 warm, confident sentences, as a master barber speaking to the client, "
             "explaining WHY these specific cuts flatter their face shape. "
-            "Only reference the cuts listed above — do not invent new styles or contradict the "
+            "Only reference the cuts listed above - do not invent new styles or contradict the "
             "barber's recommendation. Be concrete about how the cuts play off their geometry."
         )
 
@@ -165,7 +165,7 @@ async def analyze_hairstyle(file: UploadFile = File(...)):
     nparr = np.frombuffer(contents, np.uint8)
     image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    # 1. Computer-vision step (your code — the expert)
+    # 1. Computer-vision step (your code - the expert)
     shape, ratios = analyze_face_shape(image)
 
     # 2. Recommendation step (your barber rules)
