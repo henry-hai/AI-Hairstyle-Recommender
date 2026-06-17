@@ -60,7 +60,7 @@ function App() {
           <h1 className="hero__title">AI Hairstyle Recommender</h1>
           <p className="hero__subtitle">
             Upload a front-facing photo. A MediaPipe vision pipeline maps your facial
-            geometry, then 14 years of barbering expertise — explained by GPT-4o —
+            geometry, then 14 years of barbering expertise, explained by GPT-4o,
             recommends the cuts that suit your face shape.
           </p>
         </header>
