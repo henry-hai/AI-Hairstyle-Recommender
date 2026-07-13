@@ -1,0 +1,21 @@
+{
+  "labels": [
+    "Diamond",
+    "Heart",
+    "Oblong",
+    "Oval",
+    "Round",
+    "Square"
+  ],
+  "features": [
+    "height_to_cheek",
+    "cheek_to_jaw",
+    "forehead_to_cheek",
+    "jaw_to_forehead",
+    "height_to_jaw",
+    "height_to_forehead",
+    "chin_to_jaw",
+    "cheek_to_fj_mean",
+    "jaw_angle"
+  ]
+}
