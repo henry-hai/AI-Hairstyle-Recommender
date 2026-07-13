@@ -30,3 +30,9 @@ kaggle.json
 .kaggle/
 access_token
 **/access_token
+
+# Raw training images and downloaded archives (the features CSV is committed,
+# the source images are not)
+backend/data/raw/
+**/face-shape-data/
+*.zip

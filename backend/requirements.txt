@@ -6,3 +6,5 @@ mediapipe==0.10.14
 numpy
 openai
 python-dotenv
+scikit-learn==1.9.0
+joblib>=1.3

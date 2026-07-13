@@ -1,0 +1,6 @@
+# Extra dependencies for rebuilding the features and retraining the classifiers.
+# The app itself does not need these; install them only to run the scripts in
+# training/. Usage: pip install -r requirements-train.txt
+-r requirements.txt
+pandas>=2.0
+torch>=2.2
