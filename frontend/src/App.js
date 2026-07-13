@@ -93,6 +93,18 @@ function App() {
           <section className="panel results">
             <div className="result-head">
               <div className="shape-badge"><span>Face shape</span>{result.face_shape}</div>
+              {result.confidence != null && (
+                <div className="confidence" title="Model confidence in this classification">
+                  <span>Confidence</span>
+                  <div className="confidence__bar">
+                    <div
+                      className="confidence__fill"
+                      style={{ width: `${Math.round(result.confidence * 100)}%` }}
+                    />
+                  </div>
+                  <strong>{Math.round(result.confidence * 100)}%</strong>
+                </div>
+              )}
               {result.ratios && (
                 <div className="ratios">
                   {result.ratios.cheek_to_jaw != null && (
