@@ -185,6 +185,28 @@ html, body {
   border-radius: 999px;
   font-variant-numeric: tabular-nums;
 }
+.confidence {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+.confidence span { font-weight: 500; }
+.confidence strong { color: var(--text); font-variant-numeric: tabular-nums; }
+.confidence__bar {
+  width: 84px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  overflow: hidden;
+}
+.confidence__fill {
+  height: 100%;
+  background: var(--good);
+  border-radius: 999px;
+}
 
 .explanation {
   border-left: 3px solid var(--accent);
