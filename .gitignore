@@ -19,3 +19,14 @@ yarn-error.log*
 
 # System files
 .DS_Store
+# Local context bundle (not part of the project)
+AI_Hairstyle_Recommender_context.txt
+
+# Credentials and secrets (never commit)
+.env
+*.env
+kaggle.json
+**/kaggle.json
+.kaggle/
+access_token
+**/access_token
