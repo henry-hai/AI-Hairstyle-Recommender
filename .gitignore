@@ -22,6 +22,9 @@ yarn-error.log*
 # Local context bundle (not part of the project)
 AI_Hairstyle_Recommender_context.txt
 
+# Local-only markdown (prompts, notes, scratch docs), never published
+*.local.md
+
 # Credentials and secrets (never commit)
 .env
 *.env
