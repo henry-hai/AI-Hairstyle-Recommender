@@ -2,11 +2,11 @@ import os
 import cv2
 import mediapipe as mp
 import numpy as np
-from fastapi import FastAPI, UploadFile, File
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI, UploadFile, File, Request
 from dotenv import load_dotenv
 
 from features import extract_features
+from security import configure_security, decode_validated_image, limiter, ANALYZE_RATE_LIMIT
 
 load_dotenv()
 
@@ -19,14 +19,10 @@ OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-4o")
 
 app = FastAPI(title="AI Hairstyle Recommender")
 
-# Enable CORS so the React frontend can talk to the backend
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+# Wire up CORS, per-IP rate limiting, and baseline security headers. All the
+# endpoint-protection concerns live in security.py so this file stays focused
+# on the analysis and recommendation flow.
+configure_security(app, ALLOWED_ORIGINS)
 
 # Initialize MediaPipe Face Mesh (the computer-vision model)
 mp_face_mesh = mp.solutions.face_mesh
@@ -208,10 +204,11 @@ def health():
 
 
 @app.post("/analyze")
-async def analyze_hairstyle(file: UploadFile = File(...)):
-    contents = await file.read()
-    nparr = np.frombuffer(contents, np.uint8)
-    image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+@limiter.limit(ANALYZE_RATE_LIMIT)
+async def analyze_hairstyle(request: Request, file: UploadFile = File(...)):
+    # Validate the upload (type, size) and decode it, rejecting anything that
+    # is not a real, in-bounds image before it reaches the vision pipeline.
+    image = await decode_validated_image(request, file)
 
     # Detect the face and classify its shape.
     shape, ratios, confidence = analyze_face_shape(image)
